@@ -1,0 +1,22 @@
+{{ define "userarea" }}
+
+    {{ if .LoggedIn }}
+
+        <div class="user-profile">
+
+            <div class="dropdown user-pro-body"> 
+
+                <div>
+                    <img loading="lazy" src="{{ .User.GetAvatarURL }}" alt="user-img" class="img-circle">
+                </div>
+
+            </div>
+
+        </div>
+
+    {{ else }}
+
+    {{ end }}
+
+
+{{ end }}
