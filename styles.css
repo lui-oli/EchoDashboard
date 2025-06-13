@@ -15,7 +15,7 @@
         Used for primary surface layers
     ------------------------------ */
 
-    --background-dark: #121316;     /* Main background, navigation panels */
+    --background-dark: #253353;     /* Main background Changed from #121316 */
     --background-normal: #17181c;   /* Card backgrounds, containers */
     --background-light: #25272d;    /* Hover states, elevated elements */
 
@@ -57,7 +57,7 @@
 
 body {
     font-family: 'inter', -apple-system, blinkmacsystemfont, sans-serif;
-    background: #121316; /* Maybe CHANGE TO 202936 */
+    background: var(--background-dark); /* Maybe CHANGE TO 202936 */
     color: #ffffff;
     overflow-x: hidden;
 }
@@ -116,7 +116,7 @@ body {
     top: -12px;
     left: 25px;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
     color: #EFEFEF;
     margin-bottom: 15px;
@@ -140,7 +140,7 @@ body {
     align-items: center;
     padding: 8px 12px;
     color: #C2C5CD;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
     border-radius: 10px;
     text-decoration: none;
@@ -232,7 +232,87 @@ body {
     padding: 0.5rem;
 }
 
+/*  ------------------------------
+    NAVIGATION BAR 
+------------------------------*/
 
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-link {
+    background: none;
+    outline: none;
+    color: #bfc8de;
+    font-weight: 300;
+    font-size: 14px;
+    text-decoration: none;
+    position: relative;
+    padding: 0 8px;
+    transition: color 0.2s, font-weight 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-link span {
+    font-size: 14px;
+}
+
+.nav-link:hover {
+    transform: translatex(4px);
+}
+
+.nav-link i {
+    width: 20px;
+    text-align: center;
+}
+
+.nav-link::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0; right: 0; bottom: -10px;
+    height: 2px;
+    background: #17a2b8;
+    transform: scaleX(0);
+    transition: transform 0.4s;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    color: #17a2b8;
+    font-weight: 700;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    transform: scaleX(1);
+}
+
+/* Store Text ALWAYS Green */
+.store-link {
+    color: #74ea3a;
+}
+
+.store-link i {
+    color: #74ea3a;
+}
+
+/* Store Icon ALWAYS Green */
+.store-link .fa-store {
+    color: #74ea3a !important;
+    font-weight: 700;
+}
+
+/* Store Text STAYS Green Even on Hover or Active */
+.store-link:hover,
+.store-link.active {
+    color: #74ea3a !important;
+    font-weight: 700;
+}
 
 /*  ------------------------------
     HEADERS 
@@ -247,7 +327,8 @@ body {
     padding: 0 2rem;
     position: relative;
     background: #213B78; /* Headers (Navigation included) background color */
-    border-radius: 12px;
+    border-radius: 20px;
+    border: 1.5px solid #737A8C;
 }
 
 /*  ------------------------------
@@ -511,91 +592,6 @@ body {
         clip-path: inset(0 0 0 0);
         transform: translate(0, 0);
     }
-}
-
-
-/*  ------------------------------
-    NAVIGATION BAR 
-------------------------------*/
-
-.navbar {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.nav-link {
-    background: none;
-    border: none;
-    border-radius: 20;
-    outline: none;
-    color: #bfc8de;
-    font-weight: 300;
-    font-size: 16px;
-    text-decoration: none;
-    position: relative;
-    padding: 0 8px;
-    transition: color 0.2s, font-weight 0.2s;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.nav-link span {
-    font-size: 14px;
-}
-
-.nav-link:hover {
-    transform: translatex(4px);
-}
-
-.nav-link i {
-    width: 20px;
-    text-align: center;
-}
-
-.nav-link::after {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 0; right: 0; bottom: -10px;
-    height: 2px;
-    background: #17a2b8;
-    transform: scaleX(0);
-    transition: transform 0.4s;
-}
-
-.nav-link:hover,
-.nav-link:active {
-    color: #17a2b8;
-    font-weight: 700;
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
-    transform: scaleX(1);
-}
-
-/* Store Text ALWAYS Green */
-.store-link {
-    color: #74ea3a;
-}
-
-.store-link i {
-    color: #74ea3a;
-}
-
-/* Store Icon ALWAYS Green */
-.store-link .fa-store {
-    color: #74ea3a !important;
-    font-weight: 700;
-}
-
-/* Store Text STAYS Green Even on Hover or Active */
-.store-link:hover,
-.store-link.active {
-    color: #74ea3a !important;
-    font-weight: 700;
 }
 
 
