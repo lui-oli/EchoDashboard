@@ -74,3 +74,4 @@ document.querySelectorAll('.card-number').forEach(el => {
         }
     }
 });
+
